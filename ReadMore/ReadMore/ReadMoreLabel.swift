@@ -32,7 +32,7 @@ class ReadMoreLabel: UILabel {
         }
     }
 
-    func showSomeText() {
+    fileprivate func showSomeText() {
         self.numberOfLines = 3
         if let text = self.text, text.count > 1 {
             let readmoreFont = UIFont.systemFont(ofSize: 12)
@@ -40,21 +40,14 @@ class ReadMoreLabel: UILabel {
             DispatchQueue.main.async {
                 self.addTrailing(with: "...", moreText: "Readmore", moreTextFont: readmoreFont, moreTextColor: readmoreFontColor)
             }
-//            let readMoreGesture = UITapGestureRecognizer(target: self, action: #selector(labelAction))
-//            readMoreGesture.numberOfTapsRequired = 1
-//            self.addGestureRecognizer(readMoreGesture)
         }
     }
 
-    func showFullText() {
+    fileprivate func showFullText() {
         self.numberOfLines = 0
         self.text = fullText
         self.sizeToFit()
     }
-
-//    @objc func labelAction() {
-//        isFullTextShown = isFullTextShown ? false : true
-//    }
 }
 
 fileprivate extension UILabel{
