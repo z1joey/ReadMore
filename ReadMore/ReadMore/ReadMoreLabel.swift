@@ -8,9 +8,14 @@
 
 import UIKit
 
+// MARK: - Class
 class ReadMoreLabel: UILabel {
 
     fileprivate var _fullText: String?
+    fileprivate var _readmoreFont: UIFont?
+
+    var numberOfLinesForSomeText: Int = 3
+    var readmoreFontColor = UIColor(red: 246/255, green: 90/255, blue: 92/255, alpha: 1)
 
     var fullText: String? {
         get {
@@ -19,6 +24,19 @@ class ReadMoreLabel: UILabel {
         set {
             _fullText = newValue
             text = newValue
+        }
+    }
+
+    var readmoreFont: UIFont {
+        get {
+            if let font = _readmoreFont {
+                return font
+            } else {
+                return self.font
+            }
+        }
+        set {
+            _readmoreFont = newValue
         }
     }
 
@@ -31,25 +49,27 @@ class ReadMoreLabel: UILabel {
             }
         }
     }
+}
 
-    fileprivate func showSomeText() {
-        self.numberOfLines = 3
+// MARK: - Helpers
+fileprivate extension ReadMoreLabel {
+    func showSomeText() {
+        self.numberOfLines = numberOfLinesForSomeText
         if let text = self.text, text.count > 1 {
-            let readmoreFont = UIFont.systemFont(ofSize: 12)
-            let readmoreFontColor = UIColor.blue
             DispatchQueue.main.async {
-                self.addTrailing(with: "...", moreText: "Readmore", moreTextFont: readmoreFont, moreTextColor: readmoreFontColor)
+                self.addTrailing(with: "...", moreText: "Readmore", moreTextFont: self.readmoreFont, moreTextColor: self.readmoreFontColor)
             }
         }
     }
 
-    fileprivate func showFullText() {
+    func showFullText() {
         self.numberOfLines = 0
         self.text = fullText
         self.sizeToFit()
     }
 }
 
+// MARK: - UILabel
 fileprivate extension UILabel{
 
     func addTrailing(with trailingText: String, moreText: String, moreTextFont: UIFont, moreTextColor: UIColor) {

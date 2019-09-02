@@ -18,19 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXA-HV-fQg" customClass="ReadMoreLabel" customModule="ReadMore" customModuleProvider="target">
-                                <rect key="frame" x="20" y="443" width="374" height="20.5"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXA-HV-fQg" customClass="ReadMoreLabel" customModule="ReadMore" customModuleProvider="target">
+                                <rect key="frame" x="20" y="244" width="374" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfLinesForSomeText">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFullTextShown" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fullText">
+                                        <string key="value">You can apply the available attribute with the renamed and unavailable arguments to a type alias declaration, as shown below, to indicate that the name of a declaration changed between releases of a framework or library. This combination results in a compile-time error that the declaration has been renamed.</string>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-g8-e2n">
+                                <rect key="frame" x="20" y="325" width="374" height="100"/>
+                                <color key="backgroundColor" red="0.96560269590000003" green="0.35197234150000001" blue="0.3620824218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="xfn-8T-gFB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CXA-HV-fQg" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="85A-NL-552"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CXA-HV-fQg" secondAttribute="trailing" constant="20" id="BJP-6Q-Am9"/>
-                            <constraint firstItem="CXA-HV-fQg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Rqc-44-pWW"/>
-                            <constraint firstItem="CXA-HV-fQg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VR4-uL-k9a"/>
+                            <constraint firstItem="CXA-HV-fQg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="0Ht-gg-uHx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CXA-HV-fQg" secondAttribute="trailing" constant="20" id="1At-ht-5I6"/>
+                            <constraint firstItem="SHN-g8-e2n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ANv-ds-gPe"/>
+                            <constraint firstItem="SHN-g8-e2n" firstAttribute="top" secondItem="CXA-HV-fQg" secondAttribute="bottom" constant="20" id="KUn-iW-qsU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SHN-g8-e2n" secondAttribute="trailing" constant="20" id="QtC-zR-T1s"/>
+                            <constraint firstItem="CXA-HV-fQg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="evc-iD-YKG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
